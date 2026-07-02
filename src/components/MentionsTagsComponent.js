@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Mentions, Row } from 'antd/es';
-import { hashtagSuggestions } from './data/profileData';
+import { hashtagSuggestions } from '../data/profileData';
 
 const MentionsTagsComponent = ({
 	title, type, value, setValue
@@ -28,8 +28,8 @@ const MentionsTagsComponent = ({
 						defaultValue={value || '#'}
 						onChange={(value) => onSelect(value)}
 					>
-						{hashtagSuggestions.map((hashtag, key) => (
-							<Mentions.Option key={key} value={hashtag}>{`#${hashtag}`}</Mentions.Option>
+						{hashtagSuggestions.map((hashtag) => (
+							<Mentions.Option key={hashtag} value={hashtag}>{`#${hashtag}`}</Mentions.Option>
 						))}
 					</Mentions>
 				)}

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Col, Icon, Row } from 'antd/es';
+import { Col, Icon, Row } from 'antd/es';
+import PublicationCard from './PublicationCard';
 
 const PublicationsGrid = ({ posts, onSelectPost }) => (
   <Row type="flex" justify="center">
@@ -10,14 +11,11 @@ const PublicationsGrid = ({ posts, onSelectPost }) => (
           <span className="span-icon">Publications</span>
         </h2>
         {posts.map((post) => (
-          <Card
+          <PublicationCard
             key={post.id}
-            bordered
-            className="card-pubs"
+            imageUrl={post.imageUrl}
             onClick={() => onSelectPost(post)}
-          >
-            <img src={post.imageUrl} width={200} height={200} alt={post.imageUrl} />
-          </Card>
+          />
         ))}
       </Col>
     </Col>

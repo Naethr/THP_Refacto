@@ -1,11 +1,11 @@
 // Kata written by Matthieu BRAULT for the next-react formation from TheHackingProject
 import React, { useState } from 'react';
 import { message } from 'antd/es';
-import EditProfileModal from './components/modals/EditProfileModal';
-import PublicationPreviewModal from './components/modals/PublicationPreviewModal';
-import UploadPictureModal from './components/modals/UploadPictureModal';
+import EditProfileModal from './components/EditProfileModal';
+import PublicationPreviewModal from './components/PublicationPreviewModal';
 import ProfileCard from './components/ProfileCard';
 import PublicationsGrid from './components/PublicationsGrid';
+import UploadPictureModal from './components/UploadPictureModal';
 import { initialProfileData } from './data/profileData';
 
 const App = () => {

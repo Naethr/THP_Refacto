@@ -6,6 +6,13 @@ const formatDate = (date) => {
   return `${newDate.getDate()}/${newDate.getMonth() + 1}/${newDate.getFullYear()}`;
 };
 
+const ProfileDetail = ({ icon, children }) => (
+  <p>
+    <Icon type={icon} className="p-icon" />
+    {children}
+  </p>
+);
+
 const ProfileCard = ({ profile, onEditAccount, onUploadPicture }) => (
   <Row type="flex" align="middle" justify="center">
     <Col sm={16} xs={24}>
@@ -18,22 +25,10 @@ const ProfileCard = ({ profile, onEditAccount, onUploadPicture }) => (
                 <h3>{`${profile.firstname} ${profile.lastname}`}</h3>
               </Col>
               <Col span={10}>
-                <p>
-                  <Icon type="user" className="p-icon" />
-                  {profile.username}
-                </p>
-                <p>
-                  <Icon type="mail" className="p-icon" />
-                  {profile.email}
-                </p>
-                <p>
-                  <Icon type="phone" className="p-icon" />
-                  {profile.phoneNumber}
-                </p>
-                <p>
-                  <Icon type="calendar" className="p-icon" />
-                  {formatDate(profile.createdAt)}
-                </p>
+                <ProfileDetail icon="user">{profile.username}</ProfileDetail>
+                <ProfileDetail icon="mail">{profile.email}</ProfileDetail>
+                <ProfileDetail icon="phone">{profile.phoneNumber}</ProfileDetail>
+                <ProfileDetail icon="calendar">{formatDate(profile.createdAt)}</ProfileDetail>
               </Col>
             </Row>
           </Col>

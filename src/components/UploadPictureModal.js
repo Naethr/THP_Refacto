@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Col, Input, Modal, Row } from 'antd/es';
-import MentionsTagsComponent from '../../MentionsTagsComponent';
+import MentionsTagsComponent from './MentionsTagsComponent';
 
 const UploadPictureModal = ({ visible, onCancel, onUpload }) => {
   const [description, setDescription] = useState('');
@@ -33,7 +33,6 @@ const UploadPictureModal = ({ visible, onCancel, onUpload }) => {
       </Row>
       <MentionsTagsComponent
         type="mentions"
-        value={mentions}
         title="Mention a user"
         setValue={setMentions}
       />
